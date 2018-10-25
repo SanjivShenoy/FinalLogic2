@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <stack>
+#define ull unsigned long long
+#define ll long long
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+string s;
+int main()
+{
+	IOS;
+	ll n,k,a,b,flag = 0;
+	stack <char> op,ans,in;
+	cin>>s;
+	for (int i = 0; i < s.size(); ++i)
+	{
+		if(!(s[i] > 96 and s[i] < 123) or s[i] == 'V')
+		{	
+			op.push(s[i]);
+			if(s[i] == '~')
+				flag++;
+			else flag = 0;
+			if(op.top() == ')')
+			{
+				op.pop();
+				while(op.top() != '(')
+				{
+					if(op.top() != ')' and op.top() != '~')
+						ans.push(op.top());
+					op.pop();
+				}
+				op.pop();
+				while(!op.empty() and (op.top() == '~'))
+					ans.push(op.top()),op.pop();
+				continue;
+			}
+		}
+		else
+		{
+			ans.push(s[i]);
+			if(flag >= 1)
+				while(flag--)
+					ans.push(op.top()),op.pop();
+		}
+	}
+	while(!op.empty())
+	{
+		ans.push(op.top());
+		op.pop();
+	}
+	while(!ans.empty())
+		in.push(ans.top()),ans.pop();
+	while(!in.empty())
+		cout<<in.top(),in.pop();
+    return 0;
+}

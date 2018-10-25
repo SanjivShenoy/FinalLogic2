@@ -1,0 +1,93 @@
+\hypertarget{_proof_rule_functions_8cpp}{}\section{C\+:/\+Users/\+Manish/\+Desktop/\+Proof-\/\+Checker-\/master/\+Complete\+Project/\+Proof\+Rule\+Functions.cpp File Reference}
+\label{_proof_rule_functions_8cpp}\index{C\+:/\+Users/\+Manish/\+Desktop/\+Proof-\/\+Checker-\/master/\+Complete\+Project/\+Proof\+Rule\+Functions.\+cpp@{C\+:/\+Users/\+Manish/\+Desktop/\+Proof-\/\+Checker-\/master/\+Complete\+Project/\+Proof\+Rule\+Functions.\+cpp}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_proof_rule_functions_8cpp_a11239a2e6f947c2e1bc97cfc8dffdb2c}{AndI}} (char \mbox{\hyperlink{_postfix_to_binary_tree_8cpp_ac3e493f4cffdc4cfcb802790af3ac905}{tree}}\mbox{[}$\,$\mbox{]}, int l1, int l2)
+\item 
+bool \mbox{\hyperlink{_proof_rule_functions_8cpp_a20400708397fe2420ee8d8ab8c1b73db}{AndE}} (char \mbox{\hyperlink{_postfix_to_binary_tree_8cpp_ac3e493f4cffdc4cfcb802790af3ac905}{tree}}\mbox{[}$\,$\mbox{]}, int type, int l1)
+\item 
+bool \mbox{\hyperlink{_proof_rule_functions_8cpp_a982ab4656207c51905c39da4747d6db8}{OrI}} (char \mbox{\hyperlink{_postfix_to_binary_tree_8cpp_ac3e493f4cffdc4cfcb802790af3ac905}{tree}}\mbox{[}$\,$\mbox{]}, int type, int l1)
+\item 
+bool \mbox{\hyperlink{_proof_rule_functions_8cpp_aaa19d06f79780fcc2262cb2cc16abce1}{ImpE}} (char \mbox{\hyperlink{_postfix_to_binary_tree_8cpp_ac3e493f4cffdc4cfcb802790af3ac905}{tree}}\mbox{[}$\,$\mbox{]}, int l1, int l2)
+\item 
+bool \mbox{\hyperlink{_proof_rule_functions_8cpp_a42a0aca4b98c39ce4727f2344b241f86}{MT}} (char \mbox{\hyperlink{_postfix_to_binary_tree_8cpp_ac3e493f4cffdc4cfcb802790af3ac905}{tree}}\mbox{[}$\,$\mbox{]}, int l1, int l2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_proof_rule_functions_8cpp_a20400708397fe2420ee8d8ab8c1b73db}\label{_proof_rule_functions_8cpp_a20400708397fe2420ee8d8ab8c1b73db}} 
+\index{Proof\+Rule\+Functions.\+cpp@{Proof\+Rule\+Functions.\+cpp}!AndE@{AndE}}
+\index{AndE@{AndE}!Proof\+Rule\+Functions.\+cpp@{Proof\+Rule\+Functions.\+cpp}}
+\subsubsection{\texorpdfstring{And\+E()}{AndE()}}
+{\footnotesize\ttfamily bool AndE (\begin{DoxyParamCaption}\item[{char}]{tree\mbox{[}$\,$\mbox{]},  }\item[{int}]{type,  }\item[{int}]{l1 }\end{DoxyParamCaption})}
+
+Checks if first node is \textquotesingle{}$^\wedge$\textquotesingle{}. Compares left and right subtrees with the subtrees from input proof. 
+\begin{DoxyParams}{Parameters}
+{\em tree} & Binary tree with first node as $^\wedge$ \\
+\hline
+{\em type} & 1 -\/ left, 2 -\/ right \\
+\hline
+{\em l2} & line number of proof containing the right side of $^\wedge$i \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_proof_rule_functions_8cpp_a11239a2e6f947c2e1bc97cfc8dffdb2c}\label{_proof_rule_functions_8cpp_a11239a2e6f947c2e1bc97cfc8dffdb2c}} 
+\index{Proof\+Rule\+Functions.\+cpp@{Proof\+Rule\+Functions.\+cpp}!AndI@{AndI}}
+\index{AndI@{AndI}!Proof\+Rule\+Functions.\+cpp@{Proof\+Rule\+Functions.\+cpp}}
+\subsubsection{\texorpdfstring{And\+I()}{AndI()}}
+{\footnotesize\ttfamily bool AndI (\begin{DoxyParamCaption}\item[{char}]{tree\mbox{[}$\,$\mbox{]},  }\item[{int}]{l1,  }\item[{int}]{l2 }\end{DoxyParamCaption})}
+
+Checks if first node is \textquotesingle{}$^\wedge$\textquotesingle{}. Compares left and right subtrees with the subtrees from input proof. 
+\begin{DoxyParams}{Parameters}
+{\em tree} & Binary tree with first node as $^\wedge$ \\
+\hline
+{\em l1} & line number of proof containing the left side of $^\wedge$i \\
+\hline
+{\em l2} & line number of proof containing the right side of $^\wedge$i \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_proof_rule_functions_8cpp_aaa19d06f79780fcc2262cb2cc16abce1}\label{_proof_rule_functions_8cpp_aaa19d06f79780fcc2262cb2cc16abce1}} 
+\index{Proof\+Rule\+Functions.\+cpp@{Proof\+Rule\+Functions.\+cpp}!ImpE@{ImpE}}
+\index{ImpE@{ImpE}!Proof\+Rule\+Functions.\+cpp@{Proof\+Rule\+Functions.\+cpp}}
+\subsubsection{\texorpdfstring{Imp\+E()}{ImpE()}}
+{\footnotesize\ttfamily bool ImpE (\begin{DoxyParamCaption}\item[{char}]{tree\mbox{[}$\,$\mbox{]},  }\item[{int}]{l1,  }\item[{int}]{l2 }\end{DoxyParamCaption})}
+
+Checks if first node is \textquotesingle{}$^\wedge$\textquotesingle{}. Compares left and right subtrees with the subtrees from input proof. 
+\begin{DoxyParams}{Parameters}
+{\em tree} & Binary tree with first node as $^\wedge$ \\
+\hline
+{\em l1} & line number of proof containing the left side of $^\wedge$i \\
+\hline
+{\em l2} & line number of proof containing the right side of $^\wedge$i \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_proof_rule_functions_8cpp_a42a0aca4b98c39ce4727f2344b241f86}\label{_proof_rule_functions_8cpp_a42a0aca4b98c39ce4727f2344b241f86}} 
+\index{Proof\+Rule\+Functions.\+cpp@{Proof\+Rule\+Functions.\+cpp}!MT@{MT}}
+\index{MT@{MT}!Proof\+Rule\+Functions.\+cpp@{Proof\+Rule\+Functions.\+cpp}}
+\subsubsection{\texorpdfstring{M\+T()}{MT()}}
+{\footnotesize\ttfamily bool MT (\begin{DoxyParamCaption}\item[{char}]{tree\mbox{[}$\,$\mbox{]},  }\item[{int}]{l1,  }\item[{int}]{l2 }\end{DoxyParamCaption})}
+
+Checks if first node is \textquotesingle{}$^\wedge$\textquotesingle{}. Compares left and right subtrees with the subtrees from input proof. 
+\begin{DoxyParams}{Parameters}
+{\em tree} & Binary tree with first node as $^\wedge$ \\
+\hline
+{\em l1} & line number of proof containing the left side of $^\wedge$i \\
+\hline
+{\em l2} & line number of proof containing the right side of $^\wedge$i \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_proof_rule_functions_8cpp_a982ab4656207c51905c39da4747d6db8}\label{_proof_rule_functions_8cpp_a982ab4656207c51905c39da4747d6db8}} 
+\index{Proof\+Rule\+Functions.\+cpp@{Proof\+Rule\+Functions.\+cpp}!OrI@{OrI}}
+\index{OrI@{OrI}!Proof\+Rule\+Functions.\+cpp@{Proof\+Rule\+Functions.\+cpp}}
+\subsubsection{\texorpdfstring{Or\+I()}{OrI()}}
+{\footnotesize\ttfamily bool OrI (\begin{DoxyParamCaption}\item[{char}]{tree\mbox{[}$\,$\mbox{]},  }\item[{int}]{type,  }\item[{int}]{l1 }\end{DoxyParamCaption})}
+
+Checks if first node is \textquotesingle{}$^\wedge$\textquotesingle{}. Compares left and right subtrees with the subtrees from input proof. 
+\begin{DoxyParams}{Parameters}
+{\em tree} & Binary tree with first node as $^\wedge$ \\
+\hline
+{\em l1} & line number of proof containing the left side of $^\wedge$i \\
+\hline
+{\em l2} & line number of proof containing the right side of $^\wedge$i \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time Complexity</title>
+        <link rel="stylesheet" href="bootstrapcss/bootstrap.min.css">
+        <style>
+            table
+            {
+                border:2px solid black;
+                border-collapse: collapse;
+            }
+            th,td
+            {
+                border:1px solid black;
+                padding: 5px;
+            }
+
+        </style>
+    </head>
+    <body style="margin:20px;">
+        <div style="width:900px;">
+            <h1>Time Complexity</h1>
+            <p>
+                First it is worth mentioning that the <b>program runs in
+                below 2 seconds for inputs as large as 1000 lines of proof
+                on a usual Intel i5 core processor.</b>
+            </p>
+            <p>
+                Having said that the timing mentioned in the following
+                table is the sum of the times taken by all cores combined
+                (which run simultaneously) and hence is much more than 2
+                seconds for inputs of size around 1000.
+            </p>
+            <p>
+                In a way it is the time if a single processor completed the
+                entire process at a go.
+            </p>
+            <p>
+                .........................................
+            </p>
+            <h2>Complexity as length of a given line increases.</h2>
+            <p>
+                The timing of the code is unaffected by the length of
+                a particular proof line since the total number of comparisons
+                made remain the same irrespective of the number of
+                levels in the tree of a particular proof line.
+            </p>
+
+            <h2>Complexity as number of lines of proof increases</h2>
+            <p>
+                Now we know that the length of a particular line,
+                doesn't effect our complexity.
+            </p>
+            <p>
+                Also in a particular line only a single rule can
+                be applied.
+            </p>
+            <p>
+                So each line will be of the form:
+                <ol>
+                    <li>(t/^e1/line1) or (t/^e2/line1)</li>
+                    <li>(tVs)/Vi1/line1/line2 or (tVs)/Vi2/line1/line2</li>
+                    <li>(t^s)/^i/line1/line2</li>
+                    <li>t/>e/line1/line2</li>
+                    <li>(~t)/MT/line1/line2</li>
+                </ol>
+            </p>
+            <p>
+                <b>Note:</b> here t and s can themselves be literals or literals
+                connected by operators.
+            </p>
+            <p>
+                Now, the first 2 in the list(^e and Vi) need to match all
+                elements of 2 rows in the 2D array. While the other three
+                need to compare 2 pairs of rows in the array in the worst case.
+            </p>
+            <p>
+                Therefore we can take one rule from the first set and one
+                rule from the second set and test each one individually for
+                around 1000 inputs. We can then average the times.
+            </p>
+        </div>
+            <div class="row">
+                <div class="col-4">
+                    <h3>Table 1</h3>
+                    <p>
+                        CODE LIKEWISE
+                        <ol>
+                            <li>p/P</li>
+                            <li>(pVq)/Vi1/1</li>
+                            <li>(pVq)/Vi1/1</li>
+                            <li>(pVq)/Vi1/1</li>
+                        </ol>
+                        .....n times n starts from 0
+                    </p>
+                    <table style="border:2px;">
+                        <tr>
+                            <th>Number of Proof Lines</th>
+                            <th>Time (in ms)</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>33</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>37</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>55</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>66</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>103</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>146</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>279</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>447</td>
+                        </tr>
+                        <tr>
+                            <td>70</td>
+                            <td>620</td>
+                        </tr>
+                        <tr>
+                            <td>100</td>
+                            <td>893</td>
+                        </tr>
+                        <tr>
+                            <td>200</td>
+                            <td>1864</td>
+                        </tr>
+                        <tr>
+                            <td>400</td>
+                            <td>3603</td>
+                        </tr>
+                        <tr>
+                            <td>800</td>
+                            <td>7218</td>
+                        </tr>
+                        <tr>
+                            <td>900</td>
+                            <td>8197</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-4">
+                    <h3>Table 2</h3>
+                    <p>
+                        CODE LIKEWISE
+                        <ol>
+                            <li>p/P</li>
+                            <li>q/P</li>
+                            <li>(p^q)/^i/1/2</li>
+                            <li>(p^q)/^i/1/2</li>
+                        </ol>
+                        .....n times n starts from 0
+                    </p>
+                    <table style="border:2px;">
+                        <tr>
+                            <th>Number of Proof Lines</th>
+                            <th>Time (in ms)</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>73</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>85</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>130</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>191</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>352</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>557</td>
+                        </tr>
+                        <tr>
+                            <td>70</td>
+                            <td>784</td>
+                        </tr>
+                        <tr>
+                            <td>100</td>
+                            <td>1099</td>
+                        </tr>
+                        <tr>
+                            <td>200</td>
+                            <td>2183</td>
+                        </tr>
+                        <tr>
+                            <td>400</td>
+                            <td>4359</td>
+                        </tr>
+                        <tr>
+                            <td>800</td>
+                            <td>8693</td>
+                        </tr>
+                        <tr>
+                            <td>900</td>
+                            <td>9793</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="col-4">
+                    <h3>Table 3 (Avg of Table 1&2)</h3>
+                    <p>
+                        CODE LIKEWISE (can be assumed like this)
+                        <ol>
+                            <li>p/P</li>
+                            <li>q/P</li>
+                            <li>(pVq)/Vi/1</li>
+                            <li>(p^q)/^i/1/2</li>
+                        </ol>
+                        .....n times n starts from 0(lines 3 & 4 repeat)
+                    </p>
+                    <table style="border:2px;">
+                        <tr>
+                            <th>Number of Proof Lines</th>
+                            <th>Time (in ms)</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>34.5</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>42.5</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>64</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>75.5</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>116.5</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>168.5</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>315.5</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>512</td>
+                        </tr>
+                        <tr>
+                            <td>70</td>
+                            <td>702</td>
+                        </tr>
+                        <tr>
+                            <td>100</td>
+                            <td>996</td>
+                        </tr>
+                        <tr>
+                            <td>200</td>
+                            <td>2023.5</td>
+                        </tr>
+                        <tr>
+                            <td>400</td>
+                            <td>3981</td>
+                        </tr>
+                        <tr>
+                            <td>800</td>
+                            <td>7955.5</td>
+                        </tr>
+                        <tr>
+                            <td>900</td>
+                            <td>8995</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <p style="text-align:center;">
+                ........................................................................................................................................................................................................................................................................................................
+            </p>
+            <div style="text-align:center;">
+                <img src="ComplexityGraph.png">
+            </div>
+
+
+    </body>
+</html>

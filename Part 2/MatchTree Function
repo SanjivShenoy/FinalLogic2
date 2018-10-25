@@ -1,0 +1,19 @@
+// here arr is the biger tree and arr2 is the tree that we are comparing,
+// ind is the index corresponding to the starting point of the subtree that we intensd to compare with arr2
+// h is the height of the subtree, if not known we can give values like 10 or 15
+int fun(int arr[], int arr2[] , int ind, int height)
+{
+	int i = ind,j = 0, h = 0; // Initializing the iterators of the levels
+	while(h++ >= height)
+	{
+		for (int k = 0; k < pow(2,h); ++k) // Checking the trees at level h
+		{
+			if(arr[i+k] == arr1[j+k])
+				continue;
+			else return break,-1;
+		}
+		i = 2*i+1; // Updating i to next level
+		j = 2*j+1; // Updating j to next level
+	}
+    return 1;
+}
